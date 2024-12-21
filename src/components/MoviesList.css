@@ -1,0 +1,29 @@
+.movies-list {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.movies-list img {
+  height: 113px;
+  width: 75px;
+  border-radius: 5px;
+}
+
+.movies-list h3 {
+  font-size: 18px;
+  word-spacing: -6px;
+  margin-bottom: 10px;
+}
+
+.movies-list span {
+  color: #444;
+}
+
+.movies-list .buttons {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 30px;
+}
