@@ -9,7 +9,7 @@ const Header = () => {
         </div>
         <ul>
           <li>
-            <NavLink to="/">Watch List</NavLink>
+            <NavLink to="/">Watchlist</NavLink>
           </li>
           <li>
             <NavLink to="/watched">Watched</NavLink>

@@ -35,9 +35,7 @@ const Add = () => {
             {movies.length ? (
               movies.map((movie) => {
                 return (
-                  <li key={movie.imdbID}>
-                    <MoviesList {...movie} />
-                  </li>
+                  <li key={movie.imdbID}>{<MoviesList movie={movie} />}</li>
                 );
               })
             ) : (

@@ -1,4 +1,3 @@
-import WatchList from "../components/WatchList";
 import * as actions from "./ActionsType";
 
 export const reducer = (state, action) => {
@@ -6,12 +5,12 @@ export const reducer = (state, action) => {
     case actions.ADD_MOVIE_TO_WATCHLIST:
       return {
         ...state,
-        WatchList: [action.payload, ...state.WatchList],
+        watchlist: [action.payload, ...state.watchlist],
       };
     case actions.REMOVE_MOVIE_FROM_WATCHLIST:
       return {
         ...state,
-        WatchList: state.WatchList.filter(
+        watchlist: state.watchlist.filter(
           (movie) => movie.imdbID !== action.payload
         ),
       };
@@ -21,7 +20,24 @@ export const reducer = (state, action) => {
         watched: state.watched.filter(
           (movie) => movie.imdbID !== action.payload.imdbID
         ),
-        WatchList: [action.payload, ...state.WatchList],
+        watchList: [action.payload, ...state.watchlist],
       };
+    case actions.ADD_MOVIE_TO_WATCHED:
+      return {
+        ...state,
+        watchlist: state.watchlist.filter(
+          (movie) => movie.imdbID !== action.payload.imdbID
+        ),
+        watched: [action.payload, ...state.watched],
+      };
+    case actions.REMOVE_MOVIE_FROM_WATCHED:
+      return {
+        ...state,
+        watched: state.watched.filter(
+          (movie) => movie.imdbID !== action.payload.imdbID
+        ),
+      };
+    default:
+      return state;
   }
 };
