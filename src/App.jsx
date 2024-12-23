@@ -1,5 +1,4 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import "./App.css";
 import Header from "./components/Header";
 import WatchList from "./components/WatchList";
 import Watched from "./components/Watched";

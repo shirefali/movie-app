@@ -21,37 +21,43 @@ const MoviesList = ({ movie }) => {
   const watchedDisabled = storedMovieWatched ? true : false;
   return (
     <section className="movies-list">
-      <img src={movie.Poster} alt={movie.Title} />
-      <div>
-        <h3>{movie.Title}</h3>
-        <span>{movie.Year}</span>
-        <div className="buttons">
-          <button
-            type="button"
-            className="btn"
-            onClick={() =>
-              MovieContext.MoviesDispatch({
-                type: actions.ADD_MOVIE_TO_WATCHLIST,
-                payload: movie,
-              })
-            }
-            disabled={watchlistDisabled}
-          >
-            Add To WatchList
-          </button>
-          <button
-            type="button"
-            className="btn"
-            onClick={() =>
-              MovieContext.MoviesDispatch({
-                type: actions.ADD_MOVIE_TO_WATCHED,
-                payload: movie,
-              })
-            }
-            disabled={watchedDisabled && watchlistDisabled}
-          >
-            Add To Watched
-          </button>
+      <div className="movies-list-wrapper">
+        {movie.Poster ? (
+          <img src={movie.Poster} alt={movie.Title} />
+        ) : (
+          <div className="filter-poster"></div>
+        )}
+        <div>
+          <h3>{movie.Title}</h3>
+          <span>{movie.Year ? movie.Year : "-"}</span>
+          <div className="buttons">
+            <button
+              type="button"
+              className="btn"
+              onClick={() =>
+                MovieContext.MoviesDispatch({
+                  type: actions.ADD_MOVIE_TO_WATCHLIST,
+                  payload: movie,
+                })
+              }
+              disabled={watchlistDisabled}
+            >
+              Add To WatchList
+            </button>
+            <button
+              type="button"
+              className="btn"
+              onClick={() =>
+                MovieContext.MoviesDispatch({
+                  type: actions.ADD_MOVIE_TO_WATCHED,
+                  payload: movie,
+                })
+              }
+              disabled={watchedDisabled && watchlistDisabled}
+            >
+              Add To Watched
+            </button>
+          </div>
         </div>
       </div>
     </section>

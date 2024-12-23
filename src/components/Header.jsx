@@ -5,7 +5,9 @@ const Header = () => {
     <header>
       <div className="container">
         <div className="logo">
-          <Link to="/">Movies</Link>
+          <Link to="/" className="logo-text">
+            Movies
+          </Link>
         </div>
         <ul>
           <li>
@@ -15,7 +17,7 @@ const Header = () => {
             <NavLink to="/watched">Watched</NavLink>
           </li>
           <li>
-            <NavLink to="/add" className="btn">
+            <NavLink to="/add" className="btn" style={{ border: "1px" }}>
               Add
             </NavLink>
           </li>

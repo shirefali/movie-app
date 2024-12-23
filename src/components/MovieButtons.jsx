@@ -26,7 +26,7 @@ const MovieButtons = ({ movie, type }) => {
             onClick={() =>
               MovieContext.MoviesDispatch({
                 type: actions.REMOVE_MOVIE_FROM_WATCHLIST,
-                payload: movie.imdbID,
+                payload: movie,
               })
             }
           >
@@ -54,19 +54,11 @@ const MovieButtons = ({ movie, type }) => {
             onClick={() =>
               MovieContext.MoviesDispatch({
                 type: actions.REMOVE_MOVIE_FROM_WATCHED,
-                payload: movie.imdbID,
+                payload: movie,
               })
             }
           >
-            <i
-              className="fa-fw fa fa-times"
-              onClick={() =>
-                MovieContext.MoviesDispatch({
-                  type: actions.REMOVE_MOVIE_FROM_WATCHED,
-                  payload: movie.imdbID,
-                })
-              }
-            />
+            <i className="fa-fw fa fa-times" />
           </button>
         </>
       )}

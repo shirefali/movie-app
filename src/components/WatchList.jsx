@@ -10,8 +10,8 @@ const WatchList = () => {
         <div className="main-heading">
           <h1>My Watchlist</h1>
           <span className="movies-count">
-            {MovieContext.watched.length}{" "}
-            {MovieContext.watched.length <= "1" ? "movie" : "movies"}
+            {MovieContext.watchlist.length}{" "}
+            {MovieContext.watchlist.length <= "1" ? "movie" : "movies"}
           </span>
         </div>
         {MovieContext.watchlist.length > 0 ? (

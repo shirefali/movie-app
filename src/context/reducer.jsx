@@ -11,7 +11,7 @@ export const reducer = (state, action) => {
       return {
         ...state,
         watchlist: state.watchlist.filter(
-          (movie) => movie.imdbID !== action.payload
+          (movie) => movie.imdbID !== action.payload.imdbID
         ),
       };
     case actions.MOVE_TO_WATCHLIST:
@@ -20,7 +20,7 @@ export const reducer = (state, action) => {
         watched: state.watched.filter(
           (movie) => movie.imdbID !== action.payload.imdbID
         ),
-        watchList: [action.payload, ...state.watchlist],
+        watchlist: [action.payload, ...state.watchlist],
       };
     case actions.ADD_MOVIE_TO_WATCHED:
       return {
