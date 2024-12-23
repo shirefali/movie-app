@@ -26,3 +26,9 @@ Movie App is a React-based web application that allows users to search for movie
 - **API**: Fetch movie data from a third-party API
 
 ---
+
+## Usage
+
+- Search: Use the search bar in the Add section to find movies.
+- Add to Lists: Click "Add to Watchlist" or "Add to Watched." Buttons are disabled after selection.
+- Navigation: Use the links in the header to switch between pages (Add, Watchlist, Watched).
