@@ -1,5 +1,5 @@
 import { useMoviesContext } from "../context/GlobalContext";
-import "./WatchList.css";
+import "./Watchlist.css";
 import * as actions from "../context/ActionsType";
 
 const MovieButtons = ({ movie, type }) => {
